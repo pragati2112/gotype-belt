@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  api:
+    container_name: gotypi
+    image: 658555729781.dkr.ecr.ap-south-1.amazonaws.com/gotypi:latest
+    restart: always
+    ports:
+      - "8080:8080"
+    environment: 
+      - C_FORCE_ROOT="true"
+    volumes:
+      - ${PWD}/api/.env:/app/.env
